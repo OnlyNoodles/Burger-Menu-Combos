@@ -1,5 +1,5 @@
-"""03_print_menu_v1.
-First version of the 'Print Menu' function.
+"""03_output_menu_v1.
+First version of the 'Output Menu' function.
 """
 
 menu = {"Value": {"Beef burger": 5.69, "Fries": 1.00, "Fizzy drink": 1.00},
@@ -11,4 +11,3 @@ for combo, item in menu.items():
 
     for key in item:
         print(f"{key}: {item[key]}")
-        
