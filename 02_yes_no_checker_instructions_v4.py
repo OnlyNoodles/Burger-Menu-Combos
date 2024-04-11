@@ -22,14 +22,7 @@ def yes_no(question):
         # If they say no, show instructions
         elif answer == "no" or answer == "n":
             easygui.msgbox("\n---Instructions---"
-                  "\n\nThis Maori quiz will test your knowledge on numbers in Maori."
-                  "\nFirst, choose a difficulty. Difficulties range from:"
-                  "\n\n1. Beginner (Numbers 1 - 10)."
-                  "\n2. Intermediate (Numbers 11 - 20)."
-                  "\n3. Expert (Numbers 21 - 30)."
-                  "\n\nSecondly, once you enter a number, the program will tell you what difficulty you have chosen."
-                  "\nRemember this, you don't need macrons."
-                  "\nThen, press 'enter' to start the game!")
+                  "\n\n")
             break
         # Otherwise - show error
         else:
@@ -38,5 +31,5 @@ def yes_no(question):
 
 
 # Main routine
-show_instructions = easygui.enterbox(yes_no("Have you played this game before? "
+show_instructions = easygui.enterbox(yes_no("Have you ordered here before? "
                            "\n(Please answer 'yes' or 'no'): "))
