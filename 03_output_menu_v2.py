@@ -1,5 +1,5 @@
-"""03_output_menu_v2
-"""
+"""03_output_menu_v2.
+Made 03_output_menu_v1 into a function"""
 
 menu = {"Value": {"Beef burger": 5.69, "Fries": 1.00, "Fizzy drink": 1.00},
         "Cheezy": {"Cheeseburger": 6.69, "Fries": 1.00, "Fizzy drink": 1.00},
@@ -24,3 +24,4 @@ while True:
     print(f"Welcome to the Kavin's Fried Chicken, {name}!")
 
     output()
+    
