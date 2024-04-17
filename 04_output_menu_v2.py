@@ -1,5 +1,8 @@
-"""03_output_menu_v2.
-Made 03_output_menu_v1 into a function"""
+"""04_output_menu_v2.
+Made 04_output_menu_v1 into a function.
+"""
+
+import easygui
 
 menu = {"Value": {"Beef burger": 5.69, "Fries": 1.00, "Fizzy drink": 1.00},
         "Cheezy": {"Cheeseburger": 6.69, "Fries": 1.00, "Fizzy drink": 1.00},
@@ -14,14 +17,16 @@ def output():
             print(f"{key}: {item[key]}")
 
 # Main Routine
-while True:
-    print("---Welcome to Kavin's Fried Chicken---")
-    print()
-    # Asks for name
-    name = input("Please enter your name: ")
-    print()
-    # Combines welcome message and name
-    print(f"Welcome to the Kavin's Fried Chicken, {name}!")
+print("---Welcome to Kavin's Fried Chicken---")
+print()
+# Asks for name
+name = input("Please enter your name: ")
+print()
+# Combines welcome message and name
+print(f"Welcome to the Kavin's Fried Chicken, {name}!")
 
-    output()
-    
+while True:
+    choice = int(input("\nWhat do you want to do?\n"
+                       "(For a full list print, enter '1'): "))
+    if choice == 1:
+        output()
