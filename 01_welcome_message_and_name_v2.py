@@ -1,7 +1,7 @@
 """01_welcome_message_and_name_v2.
 This is the first part of the Burger Menu Combos.
 It is what the user will see first as soon as they run the program.
-I have imported easygui into here as that is what my program will be using."""
+I have imported easygui into here as that is what my base program will be using."""
 
 import easygui
 
