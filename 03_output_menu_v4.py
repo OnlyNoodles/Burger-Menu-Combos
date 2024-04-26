@@ -1,5 +1,6 @@
 """03_output_menu_v4.
 Incorporated easygui into the function and main routine.
+Also made it so that the full menu is shown in one single easygui box.
 This is the version I will use for my final full program.
 """
 
@@ -12,12 +13,12 @@ menu = {"Value": {"Beef burger": 5.69, "Fries": 1.00, "Fizzy drink": 1.00},
 
 # Function for outputting the full menu
 def output():
+    menu_text = ""
     for combo, item in menu.items():
-        easygui.msgbox(f"\nCombo name: {combo}")
-
+        menu_text += f"\nCombo name: {combo}\n"
         for key in item:
-            easygui.msgbox(f"{key}: {item[key]}")
-
+            menu_text += f"{key}: {item[key]}\n"
+    easygui.msgbox(menu_text, "Menu")
 
 # Main routine
 
