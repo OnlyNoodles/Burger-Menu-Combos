@@ -1,7 +1,7 @@
 """06_add_combo_v4.
 Added the 06_add_combo_v3 into the option's menu.
 Also changed the menu. However, because of the menu change,
-I will incorporate the updated functions in burger_menu_combos_v2."""
+I will incorporate the updated functions in 08_burger_menu_combos_v2."""
 
 import easygui
 
