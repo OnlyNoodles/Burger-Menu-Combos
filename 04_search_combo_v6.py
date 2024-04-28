@@ -1,5 +1,12 @@
 """04_search_combo_v6.
-Changed the search combo function to accommodate for the new menu"""
+Changed the search combo function to accommodate for the new menu
+needed for the adding combo and deleting combo function.
+Deleted the while loop from the search combo function
+to keep consistent with the other functions.
+After the user does an input in the search function,
+it will take the user back to the option's menu,
+just like the other functions do. This is the final iteration
+of the search combo function and will be used in my base code."""
 
 import easygui
 
@@ -26,31 +33,25 @@ def output():
 
 # Function for searching combo
 def search():
-    while True:
-        # Ask the user for what combo they want to search
-        combo_search = easygui.enterbox("\nType the name of the combo you want "
-                                        "to search for (use capitals where necessary). "
-                                        "To go back to the options menu, enter 'X': ")
+    # Ask the user for what combo they want to search
+    combo_search = easygui.enterbox("\nType the name of the combo you want "
+                                    "to search for (use capitals where necessary): ")
 
-        # If the user wants to go back, break the loop
-        if combo_search == "X":
+    # Search for the combo in the menu
+    found = False
+    for combo in menu:
+        if combo["Combo"] == combo_search:
+            found = True
+            combo_text = f"\nCombo: {combo_search}\n"
+            for category, items in combo.items():
+                if category != "Combo":
+                    for item, price in items.items():
+                        combo_text += f"{item}: ${price}\n"
+            easygui.msgbox(combo_text)
             break
 
-        # Search for the combo in the menu
-        found = False
-        for combo in menu:
-            if combo["Combo"] == combo_search:
-                found = True
-                combo_text = f"\nCombo: {combo_search}\n"
-                for category, items in combo.items():
-                    if category != "Combo":
-                        for item, price in items.items():
-                            combo_text += f"{item}: ${price}\n"
-                easygui.msgbox(combo_text)
-                break
-
-        if not found:
-            easygui.msgbox("\nPlease enter a valid combo.")
+    if not found:
+        easygui.msgbox("\nCombo not found.")
 
 
 # Main routine

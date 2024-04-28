@@ -17,11 +17,11 @@ def add():
     new_combo = {}
     new_combo["Combo"] = easygui.enterbox("Enter combo name: ")
     new_combo["Burger"] = {}
-    new_combo["Burger"][easygui.enterbox("Enter burger: ")] = float(easygui.enterbox("Enter burger price: $"))
+    new_combo["Burger"][easygui.enterbox("Enter burger: ")] = float(easygui.integerbox("Enter burger price: $"))
     new_combo["Fries"] = {}
-    new_combo["Fries"][easygui.enterbox("Enter size of fries: ")] = float(easygui.enterbox("Enter fries price: $"))
+    new_combo["Fries"][easygui.enterbox("Enter size of fries: ")] = float(easygui.integerbox("Enter fries price: $"))
     new_combo["Drink"] = {}
-    new_combo["Drink"][easygui.enterbox("Enter drink: ")] = float(easygui.enterbox("Enter drink price: $"))
+    new_combo["Drink"][easygui.enterbox("Enter drink: ")] = float(easygui.integerbox("Enter drink price: $"))
 
     menu.append(new_combo)
     easygui.msgbox("Combo added successfully.")

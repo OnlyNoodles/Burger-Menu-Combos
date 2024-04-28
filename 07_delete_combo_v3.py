@@ -19,7 +19,7 @@ def delete():
             if category != "Combo":
                 menu_text += f"{category}:\n"
                 for item, price in items.items():
-                    menu_text += f"  - {item}: {price}\n"
+                    menu_text += f"  - {item}: ${price}\n"
     delete_combo = easygui.enterbox(f"Current menu:\n"
           f"{menu_text}\n"
             "Enter the name of the combo you want to delete: ")
@@ -39,7 +39,7 @@ def delete():
                 if category != "Combo":
                     menu_text += f"{category}:\n"
                     for item, price in items.items():
-                        menu_text += f"  - {item}: {price}\n"
+                        menu_text += f"  - {item}: ${price}\n"
         easygui.msgbox(title="Combo deleted.", msg="Current menu:\n"
               f"{menu_text}")
     else:

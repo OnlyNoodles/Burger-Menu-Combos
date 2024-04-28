@@ -19,7 +19,7 @@ def output():
             if category != "Combo":
                 menu_text += f"{category}:\n"
                 for item, price in items.items():
-                    menu_text += f"  - {item}: {price}\n"
+                    menu_text += f"  - {item}: ${price}\n"
     easygui.msgbox(menu_text, "Menu")
 
 

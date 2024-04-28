@@ -1,7 +1,5 @@
-"""06_add_combo_v4.
-Added the 06_add_combo_v3 into the option's menu.
-Also changed the menu. However, because of the menu change,
-I will incorporate the updated functions in the base code."""
+"""07_delete_combo_v4.
+Testing 07_delete_combo_v3 in the option's menu which has the other functions."""
 
 import easygui
 
@@ -12,8 +10,6 @@ menu = [{"Combo": "Value", "Burger": {"Beef burger": 5.69},
         {"Combo": "Super", "Burger": {"Cheeseburger": 6.69},
          "Fries": {"Large fries": 2.00}, "Drink": {"Smoothie": 2.00}}]
 
-
-# Function for outputting the full menu
 def output():
     menu_text = ""
     for combo, item in menu.items():
@@ -71,6 +67,41 @@ def add():
     easygui.msgbox(combo_text, "New Combo")
 
 
+def delete():
+    menu_text = ""
+    for combo in menu:
+        menu_text += f"\nCombo name: {combo['Combo']}\n"
+        for category, items in combo.items():
+            if category != "Combo":
+                menu_text += f"{category}:\n"
+                for item, price in items.items():
+                    menu_text += f"  - {item}: ${price}\n"
+    delete_combo = easygui.enterbox(f"Current menu:\n"
+          f"{menu_text}\n"
+            "Enter the name of the combo you want to delete: ")
+
+    deleted = False
+    for i, combo in enumerate(menu):
+        if combo["Combo"] == delete_combo:
+            del menu[i]
+            deleted = True
+            break
+
+    if deleted:
+        menu_text = ""
+        for combo in menu:
+            menu_text += f"\nCombo name: {combo['Combo']}\n"
+            for category, items in combo.items():
+                if category != "Combo":
+                    menu_text += f"{category}:\n"
+                    for item, price in items.items():
+                        menu_text += f"  - {item}: ${price}\n"
+        easygui.msgbox(title="Combo deleted.", msg="Current menu:\n"
+              f"{menu_text}")
+    else:
+        easygui.msgbox("\nCombo not found.")
+
+
 # Main routine
 
 # Welcome Message
@@ -84,7 +115,8 @@ while True:
     choice = easygui.integerbox("\nFor a full menu print, enter '1'.\n"
                        "To search for a combo from the menu, enter '2'.\n"
                         "To add a combo, enter '3'.\n"
-                        "To exit, enter '4'.\n"
+                        "To delete a combo, enter '4'.\n"
+                        "To exit, enter '5'.\n"
                        "What do you want to do today?\n"
                        "Enter here: ")
     if choice == 1:
@@ -97,6 +129,9 @@ while True:
         add()
 
     elif choice == 4:
+        delete()
+
+    elif choice == 5:
         break
 
     else:
