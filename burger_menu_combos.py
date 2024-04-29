@@ -135,7 +135,7 @@ while True:
                                    "To search for a combo from the existing menu, select 'Search Combo'.\n\n"
                                    "To add a combo to the existing menu, select 'Add Combo'.\n\n"
                                    "To delete a combo from the existing menu, select 'Delete Combo'.\n\n"
-                                   "To exit, select '5'.\n\n"
+                                   "To exit, select 'Exit'.\n\n"
                                    "What do you want to do today?", title="Option's Menu",
                                choices=["Full Menu Print", "Search Combo", "Add Combo", "Delete Combo", "Exit"])
 
